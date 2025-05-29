@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: chatndev-frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+    headers:
+      - path: /*
+        name: Cross-Origin-Embedder-Policy
+        value: require-corp
+      - path: /*
+        name: Cross-Origin-Opener-Policy
+        value: same-origin
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
