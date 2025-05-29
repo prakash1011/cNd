@@ -15,7 +15,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-    origin: ["https://chatndev-frontend.windsurf.build", "http://localhost:5173"],
+    origin: ["https://chatndev-frontend.windsurf.build", "http://localhost:5173", "https://chatndev.onrender.com", "https://chatndev.render.com"],
     credentials: true
 }));
 app.use(morgan('dev'));
